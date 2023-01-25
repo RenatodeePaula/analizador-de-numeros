@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(16, 85, 246, 0.706);    
+}
+
+header {
+    color: white;
+}
+
+h3 {
+    display: inline;
+}
+
+section {     
+    background: white;
+    border-radius: 10px;    
+    width: 510px;
+    height: auto;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.671);    
+}
+
+section * {
+    margin: 8px;
+}
+
+
+
+select {
+    display: block;
+    width: 150px;
+    display: flex;
+
+}
+
+
+#fim input{
+    margin-left: 18px;
+  
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-style: italic;
+}
+
