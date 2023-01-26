@@ -1,10 +1,24 @@
 let numeroDigitado = document.querySelector('input')
 let add = document.querySelector('#add')
-let analizador = document.getElementById('panel')
+let panel = document.getElementById('panel')
+let numerosGuardados  = []
 
 
+ function isNumber (num) {
+   if (num >= 1 && num <= 100) {
+      return true
+ 
+   } else  {
+      return false
+   }
 
-function result() {
-   console.log(Numero(numeroDigitado)) 
-}
-result()
+ }
+
+ function adicionar () {
+   if (isNumber(Number(numeroDigitado.value)) ){
+      alert('Número digitado ok!')
+   } else {
+      alert('AHHHHHHHHHHHHHHHHHHHHHHH!!!')
+   }
+ }
+
