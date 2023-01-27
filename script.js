@@ -4,8 +4,8 @@ let panel = document.getElementById('panel')
 let numerosGuardados  = []
 
 
- function isNumber (num) {
-   if (num >= 1 && num <= 100) {
+ function isNumber (guard) {
+   if (guard >= 1 && guard <= 100) {
       return true
  
    } else  {
@@ -13,31 +13,29 @@ let numerosGuardados  = []
    }
 
  }
+ 
 
-//  function mesmoNumero() {
-//    if () {
+ function numeroRepetido(guard, digit) {
+      if (guard.indexOf(digit) == -1)  {
+         return true
+      } else {
+         return false
+      }
 
-//    }
+   }
 
-//  }
 
  function adicionar () {
-   if (isNumber(Number(numeroDigitado.value)) ){    
-     let  numero = Number(numeroDigitado.value)
-         numerosGuardados.push(numero)
+   let  numero = Number(numeroDigitado.value)
+   if (isNumber(numero) && numeroRepetido(numerosGuardados, numero)){    
+      numerosGuardados.push(numero)
          let item = document.createElement('option')
-         item.text = `Número  ${numerosGuardados.value} adicionado!`
-         if(numerosGuardados.indexOf(numero)) {
-           
-            panel.appendChild(item)
-         }
-   
-      
-      
-     
+         item.text = `Número  ${numero} adicionado!`
+        
+            panel.appendChild(item)   
 
    } else {
-      alert('AHHHHHHHHHHHHHHHHHHHHHHH!!!')
+      alert('Número Inválido!!!')
    }
  }
 
