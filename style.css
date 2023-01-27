@@ -2,7 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(16, 85, 246, 0.706);    
+    background: rgba(16, 85, 246, 0.706);  
+    color: black;  
 }
 
 header {
@@ -30,7 +31,7 @@ section * {
 
 select {
     display: block;
-    width: 150px;
+    width: 170px;
     display: flex;
 
 }

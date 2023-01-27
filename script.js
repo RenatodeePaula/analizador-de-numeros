@@ -14,9 +14,28 @@ let numerosGuardados  = []
 
  }
 
+//  function mesmoNumero() {
+//    if () {
+
+//    }
+
+//  }
+
  function adicionar () {
-   if (isNumber(Number(numeroDigitado.value)) ){
-      alert('Número digitado ok!')
+   if (isNumber(Number(numeroDigitado.value)) ){    
+     let  numero = Number(numeroDigitado.value)
+         numerosGuardados.push(numero)
+         let item = document.createElement('option')
+         item.text = `Número  ${numerosGuardados.value} adicionado!`
+         if(numerosGuardados.indexOf(numero)) {
+           
+            panel.appendChild(item)
+         }
+   
+      
+      
+     
+
    } else {
       alert('AHHHHHHHHHHHHHHHHHHHHHHH!!!')
    }
