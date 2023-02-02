@@ -6,7 +6,6 @@ let numerosGuardados  = []
 const fim = document.querySelector('button #final')
 let divFinalizar = document.getElementById('divFinal')  
 
-
 // Função para verificar se o número digitado se encontra entre 1 e 100.
  function isNumber (guard) {
    if (guard >= 1 && guard <= 100) {
@@ -20,77 +19,71 @@ let divFinalizar = document.getElementById('divFinal')
 // Função para verificar se tem número repedito no Array.
 function numeroRepetido(guard, digit) {
       if (guard.indexOf(digit) == -1)  {
-         return true
-      } else {
          return false
+      } else {
+         return true
       }  
-
 }
-
 // Função para adicionar os resultados de números digitados no input e verificar as condições aceitas.
-function adicionar () {
+function adicionar () {  
    let  numero = Number(numeroDigitado.value)
-   if (isNumber(numero) && numeroRepetido(numerosGuardados, numero)){    
+   if (isNumber(numero) && !numeroRepetido(numerosGuardados, numero)){  
       numerosGuardados.push(numero)
       let item = document.createElement('option')
       item.text = `Número  ${numero} adicionado!`
 
-      panel.appendChild(item)   
+      panel.appendChild(item) 
+      divFinalizar.innerHTML = ''
+    
 
    } else {
-      alert('Número Inválido!!!')
+      alert('Valor inválido ou já encontrado na lista!')
    }
+   numeroDigitado.value = ''
+   numeroDigitado.focus()
  }
 
-function finalizar () {
+function finalizar () { 
    
-   let soma = 0  
-   let = maiorNumero = 0 
-   let = menorNumero = 101
-   let media = 0
+   if (numerosGuardados.length == 0) {
+      alert("Adicione valores antes de finalizar!")
+   } else {
+      let  soma = 0  
+      let  maiorNumero = numerosGuardados [0]
+      let  menorNumero = numerosGuardados [0]
+      let  media = 0
    
-   for (let cont = 0; cont < numerosGuardados.length ;  cont ++ ) {
-      
-      // Somar valores do array.
-      soma = soma + numerosGuardados[cont]     
-     
-      
-      // Verificar maior número digitado.      
-      if (numerosGuardados[cont] > maiorNumero ) {
-         maiorNumero = numerosGuardados[cont]
-      }
+      for  (let cont in numerosGuardados ) {  
+         if (numerosGuardados[cont] > maiorNumero) {
+            maiorNumero = numerosGuardados[cont]
+         } 
+         
+         if (numerosGuardados[cont] < menorNumero){
+            menorNumero = numerosGuardados [cont]
 
-      // Verificar menor número digitado.
-      if ( numerosGuardados[cont] < menorNumero ) {
-         menorNumero = numerosGuardados[cont]
-      }
+         } 
+          soma += numerosGuardados[cont]     
+         media = soma / numerosGuardados.length  
+      }   
       
+      divFinalizar.innerHTML = ''
+      divFinalizar.innerHTML += `
+      <p>Ao todo, temos ${numerosGuardados.length} números cadastrados. </p>
+      
+      <p> O maior valor informado foi ${maiorNumero}. </p>
+
+      <p> O menor valor informado foi ${menorNumero} </p>
+
+      <p> Somando todos os valores, temos ${soma}. </p>
+
+      <p> A média dos valores digitados é ${media.toFixed(2)} </p>
+      `
    }  
-
-    // Verificar a média dos números digitados.
-
-    media = soma / numerosGuardados.length
-   
-   
-   
-   // Adicionando texto dinâmico no parágrafo finalizar.
-   let item2 = document.createElement('p')
-   item2.innerText = `
-   Ao todo, temos ${numerosGuardados.length} números cadastrados.
-   
-   O maior valor informado foi ${maiorNumero}.
-
-   O menor valor informado foi ${menorNumero}
-
-   Somando todos os valores, temos ${soma}.
-
-   A média dos valores digitados é ${media}
-
-   `
-   
-   divFinalizar.appendChild(item2)
-
 }
+
+   
+   
+
 
  
 

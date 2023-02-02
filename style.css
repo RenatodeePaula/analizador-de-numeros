@@ -27,15 +27,11 @@ section * {
     margin: 8px;
 }
 
-
-
 select {
     display: block;
     width: 170px;
     display: flex;
-
 }
-
 
 #fim input{
     margin-left: 18px;
@@ -50,5 +46,5 @@ footer {
 }
 
 #divFinal p {
-   font-size: 18px;
+   font-size: 20px;
 }
